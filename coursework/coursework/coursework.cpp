@@ -244,6 +244,8 @@ struct lwrite
 inline std::ostream &operator<<(std::ostream &outs, const lwrite &v)
 {
 	unsigned long value = v.value;
+
+	//#pragma omp parallel
 	for (unsigned cntr = 0; cntr < v.size; cntr++, value >>= 8)
 		outs.put(static_cast<char>(value & 0xFF));
 	return outs;
@@ -274,6 +276,8 @@ bool array2bmp(const std::string &filename, const vector<vec> &pixels, const siz
 	// biXPelsPerMeter, biYPelsPerMeter, biClrUsed, biClrImportant
 	f << lwrite(0, 4) << lwrite(0, 4) << lwrite(0, 4) << lwrite(0, 4);
 	// Write image data
+
+	//#pragma omp parallel
 	for (size_t x = height; x > 0; x--)
 	{
 		for (size_t y = 0; y < width; y++)
@@ -307,6 +311,8 @@ int main(int argc, char **argv)
 		sphere(1e5, vec(50, 40.8, -1e5 + 170), vec(), vec(), reflection_type::DIFFUSE),
 		sphere(1e5, vec(50, 1e5, 81.6), vec(), vec(0.75, 0.75, 0.75), reflection_type::DIFFUSE),
 		sphere(1e5, vec(50, -1e5 + 81.6, 81.6), vec(), vec(0.75, 0.75, 0.75), reflection_type::DIFFUSE),
+		sphere(1e5, vec(53, 4, 81.6), vec(), vec(0.75, 0.75, 0.75), reflection_type::DIFFUSE),
+		sphere(1e5, vec(52, -1, 81.6), vec(), vec(0.75, 0.75, 0.75), reflection_type::DIFFUSE),
 		sphere(16.5, vec(27, 16.5, 47), vec(), vec(1, 1, 1) * 0.999, reflection_type::SPECULAR),
 		sphere(16.5, vec(73, 16.5, 78), vec(), vec(1, 1, 1) * 0.999, reflection_type::REFRACTIVE),
 		sphere(600, vec(50, 681.6 - 0.27, 81.6), vec(12, 12, 12), vec(), reflection_type::DIFFUSE)
@@ -318,7 +324,8 @@ int main(int argc, char **argv)
 	vec cy = (cx.cross(camera.direction)).normal() * 0.5135;
 	vec r;
 	vector<vec> pixels(dimension * dimension);
-
+	
+	//#pragma omp parallel
 	for (size_t y = 0; y < dimension; ++y)
 	{
 		cout << "Rendering " << dimension << " * " << dimension << "pixels. Samples:" << samples * 4 << " spp (" << 100.0 * y / (dimension - 1) << ")" << endl;
@@ -342,5 +349,7 @@ int main(int argc, char **argv)
 		}
 	}
 	cout << "img.bmp" << (array2bmp("img.bmp", pixels, dimension, dimension) ? " Saved\n" : " Save Failed\n");
+	string a;
+	cin >> a;
 	return 0;
 }
