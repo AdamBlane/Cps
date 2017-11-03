@@ -1,5 +1,4 @@
 \documentclass[journal,transmag]{IEEEtran}
-
 \usepackage{cite}
 \usepackage[pdftex]{graphicx}
 % declare the path(s) where your graphic files are
@@ -24,7 +23,6 @@
 	numbersep=2pt,    
 	xleftmargin=2pt,
 	frame=tb,
-	columns=fullflexible,
 	showstringspaces=false,
 	tabsize=4,
 	keepspaces=true,
@@ -62,15 +60,21 @@
 \maketitle
 
 \section{Introduction}
+ Today learning how to parallelise is very important computer games can be some of the worst games and competent parallelization can allow great graphics to be run on an average pc. This allows people skilled in parallelization to be very successful in a variety of jobs very relevant today.\par\noindent
+ 
+ In this coursework the task was too parallelise a ray tracer to improve the performance using multi-threading and CPU- level parallelism. Then evaluate the performance and compare it to the serial performance.  The ways that the algorithm was evaluated was through changing several aspects such as samples per pixel and size of image. These aspects were then measured through speed up and efficiency and recorded.
  
 
 \section{Inital Analysis}
 To perform the initial analysis of the program the program was run serval times changing several variables. These test showed that the algorithm performed well with small sample sizes however similarly to most serial programs the system struggled with large sample sizes showing a bottleneck exist as the time taken to complete the complete the picture increased exponentially the larger the sample per pixel this was also the case for changing the size of the image where a larger image would take a greater time. However while testing adding more objects to the scene it was noted that this had little effect on the overall time taken to complete which made sense as this did not add more pixels to the image but changed the picture itself.
 	\subsection{Parallelizable Places}
+To look for places to parallelize the easiest places to look is at the for loops as threads allow the for loops to be run simultaneously. The largest for loop inside the algorithm was the multi for loop that calculate what colour each pixel is shown below. It was decided that this would be the part of the algorithm that would be parallelised.
+\newpage 
 \lstinputlisting[caption = The code that would be parallised]{./sourceCode/hello.cpp}
 	
 \section{Methodology}
 	\subsubsection{OpenMP}
+	The first approach was to use OpenMP, OpenMP is a library to support shared memory concurrency allowing it to be portable and added easily to the program. The reason OpenMP was used over the first for loop as the first approach was because it’s simple to use which means it will also be rather robust as it will help the programmer tag parts of potential concurrency. It can also be used in conjunction with other approaches allowing more threading to be used.
 	\subsubsection{Multi-Threading}
 	\subsubsection{Algorithimic Skeletons}
 	\subsubsection{CPU-Paralleism}
