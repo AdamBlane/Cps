@@ -301,7 +301,7 @@ bool array2bmp(const std::string &filename, const vector<vec> &pixels, const siz
 
 int main(int argc, char **argv)
 {
-	for (size_t y = 0; y < 5; ++y)
+	for (size_t y = 0; y < 10; ++y)
 	{
 		std::clock_t start;
 		double duration;
@@ -313,7 +313,7 @@ int main(int argc, char **argv)
 		auto get_random_number = bind(distribution, generator);
 
 		// *** These parameters can be manipulated in the algorithm to modify work undertaken ***
-		constexpr size_t dimension = 2048;
+		constexpr size_t dimension = 512;
 		constexpr size_t samples = 1; // Algorithm performs 4 * samples per pixel.
 		vector<sphere> spheres
 		{
@@ -337,8 +337,8 @@ int main(int argc, char **argv)
 		vec r;
 		vector<vec> pixels(dimension * dimension);
 
-		//#pragma omp parallel
-		for (size_t y = 0; y < dimension; ++y)
+        //#pragma omp parallel for num_threads(4)
+		for (int y = 0; y < dimension; ++y)
 		{
 			//cout << "Rendering " << dimension << " * " << dimension << "pixels. Samples:" << samples * 4 << " spp (" << 100.0 * y / (dimension - 1) << ")" << endl;
 			for (size_t x = 0; x < dimension; ++x)
@@ -360,7 +360,7 @@ int main(int argc, char **argv)
 				}
 			}
 		}
-		cout << "img.bmp" << (array2bmp("img.bmp", pixels, dimension, dimension) ? " Saved\n" : " Save Failed\n");
+		//cout << "img.bmp" << (array2bmp("img.bmp", pixels, dimension, dimension) ? " Saved\n" : " Save Failed\n");
 		duration = (std::clock() - start) / (double)CLOCKS_PER_SEC;
 		std::cout << "printf: " << duration << '\n';
 	}

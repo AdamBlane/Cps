@@ -70,9 +70,10 @@ To perform the initial analysis of the program the program was run serval times 
 	\subsection{Parallelizable Places}
 To look for places to parallelize the easiest places to look is at the for loops as threads allow the for loops to be run simultaneously. The largest for loop inside the algorithm was the multi for loop that calculate what colour each pixel is shown below. It was decided that this would be the part of the algorithm that would be parallelised.
 \newpage 
-\lstinputlisting[caption = The code that would be parallised]{./sourceCode/hello.cpp}
+\lstinputlisting[caption = The code that was be parallised]{./sourceCode/hello.cpp}
 	
 \section{Methodology}
+To test the parallelisation of the ray cast algorithm three aspects of the code were tested; the number of samples per pixel, changing the size of the image and adding other objects to the scene. To keep the results consistent only one value was tested at a time. The other values were kept constant while the tests were being run. The time taken to complete the image was measured, this was repeated 10 time and an average was calculated. These test were time consuming so other computers were used however all the computers used had same graphics card and CPU to allow the tests to stay legitimate. 
 	\subsubsection{OpenMP}
 	The first approach was to use OpenMP, OpenMP is a library to support shared memory concurrency allowing it to be portable and added easily to the program. The reason OpenMP was used over the first for loop as the first approach was because it’s simple to use which means it will also be rather robust as it will help the programmer tag parts of potential concurrency. It can also be used in conjunction with other approaches allowing more threading to be used.
 	\subsubsection{Multi-Threading}
