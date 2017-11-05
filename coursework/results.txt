@@ -6,16 +6,16 @@ size of file 4096
 {214.121,216.375,216.665,212.932,209.992}
 size of file 8192
 {846.676}
-number of objects in scene 1
+number of objects in scene 1 NO
 {9.411,9.275,9.303,9.389,9.668,9.551,9.849,9.582,9.582,9.563,9.562} 
 
-number of objects in scene 2
+number of objects in scene 2 NO
 {9.864,9.780,9.799,9.820,9.908,9.808,9.786,9.804,9.782,9.826,9.785} 
 
-number of objects in scene 4
+number of objects in scene 4 NO
 {9.036,8.982,9.083,9.070,9.017,9.001,8.992, 9.013,8.994, 8.977,9.011} 
 
-number of objects in scene 8
+number of objects in scene 8 NO
 {printf: 10.87
 printf: 10.793
 printf: 10.799
@@ -27,7 +27,7 @@ printf: 10.793
 printf: 10.809
 printf: 10.816}
 
-number of objects in scene 16
+number of objects in scene 16 NO
 {printf: 13.572
 printf: 13.491
 printf: 13.501
@@ -38,5 +38,174 @@ printf: 13.529
 printf: 13.514
 printf: 13.507
 printf: 13.515
+}
+
+samples used 16 MT
+{printf: 49.216
+printf: 49.173
+printf: 48.991
+printf: 49.026
+printf: 49.027
+printf: 49.114
+printf: 49.07
+printf: 49.037
+printf: 48.948
+printf: 48.942}
+
+obects in scene 1 BO
+{printf: 4.309
+printf: 4.243
+printf: 4.247
+printf: 4.232
+printf: 4.236
+printf: 4.231
+printf: 4.235
+printf: 4.237
+printf: 4.25
+printf: 4.221}
+
+obects in scene 1 MT
+{printf: 10.357
+printf: 10.247
+printf: 10.151
+printf: 10.302
+printf: 10.22
+printf: 10.21
+printf: 10.042
+printf: 10.404
+printf: 10.18
+printf: 10.145}
+
+
+objects in scene 2 BO
+{printf: 4.41
+printf: 4.399
+printf: 4.281
+printf: 4.314
+printf: 4.308
+printf: 4.288
+printf: 4.3
+printf: 4.292
+printf: 4.311
+printf: 4.31
+}
+
+objects in scene 2 MT
+{printf: 10.562
+printf: 10.211
+printf: 10.318
+printf: 10.304
+printf: 10.216
+printf: 10.212
+printf: 10.245
+printf: 10.303
+printf: 10.221
+printf: 10.214}
+
+objects in scene 4 BO
+{printf: 3.706
+printf: 3.654
+printf: 3.635
+printf: 3.639
+printf: 3.643
+printf: 3.639
+printf: 3.65
+printf: 3.653
+printf: 3.658
+printf: 3.645}
+
+objects in scene 4 MT
+{printf: 9.113
+printf: 9.057
+printf: 9.125
+printf: 8.973
+printf: 9.137
+printf: 9.099
+printf: 8.916
+printf: 9.038
+printf: 9.057
+printf: 9.083
+}
+
+objects in scene 8 BO
+{printf: 4.334
+printf: 4.247
+printf: 4.223
+printf: 4.181
+printf: 4.201
+printf: 4.18
+printf: 4.222
+printf: 4.227
+printf: 4.222
+printf: 4.19}
+
+objects in scene 8 MT
+{printf: 11.055
+printf: 10.864
+printf: 10.757
+printf: 10.768
+printf: 10.921
+printf: 10.849
+printf: 10.799
+printf: 10.793
+printf: 10.905
+printf: 10.824
+}
+
+objects in scene 16 BO
+{printf: 4.81
+printf: 4.717
+printf: 4.719
+printf: 4.766
+printf: 4.704
+printf: 4.7
+printf: 4.727
+printf: 4.719
+printf: 4.724
+printf: 4.726}
+
+objects in scene 16 MT
+{printf: 12.972
+printf: 12.745
+printf: 12.887
+printf: 13.257
+printf: 12.975
+printf: 12.78
+printf: 12.724
+printf: 12.939
+printf: 12.937
+printf: 12.668}
+
+objects in scene 32 BO
+{printf: 6.02
+printf: 5.881
+printf: 5.826
+printf: 5.868
+printf: 5.875
+printf: 5.878
+printf: 5.934
+printf: 5.867
+printf: 5.878
+printf: 5.892}
+
+objects in scene 32 MT
+{printf: 16.888
+printf: 16.968
+printf: 16.769
+printf: 16.783
+printf: 16.672
+printf: 16.876
+printf: 16.991
+printf: 16.891
+printf: 17.111
+printf: 17.372
+}
+
+extra (size 4096 MT)
+{printf: 196.665
+printf: 196.57
+printf: 196.503
+printf: 196.473
+printf: 196.618
 }
 
