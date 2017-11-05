@@ -10,6 +10,7 @@
 #include <iostream>
 #include <string>
 #include <omp.h>
+#include <thread> 
 #include <time.h>
 #include <iostream>
 #include <cstdio>
@@ -78,7 +79,7 @@ struct vec
 		return vec(y * other.z - z * other.y, z * other.x - x * other.z, x * other.y - y * other.x);
 	}
 };
-
+vector<vec> pixels;
 struct ray
 {
 	vec origin, direction;
@@ -298,7 +299,28 @@ bool array2bmp(const std::string &filename, const vector<vec> &pixels, const siz
 	}
 	return f.good();
 }
-
+void thr(size_t y, size_t dimension, size_t samples, _Binder<_Unforced, uniform_real_distribution<double>&, default_random_engine&> get_random_number, vec r, vec cx, vec cy, vector<sphere> spheres, ray camera)
+{
+	//cout << "Rendering " << dimension << " * " << dimension << "pixels. Samples:" << samples * 4 << " spp (" << 100.0 * y / (dimension - 1) << ")" << endl;
+	for (size_t x = 0; x < dimension; ++x)
+	{
+		for (size_t sy = 0, i = (dimension - y - 1) * dimension + x; sy < 2; ++sy)
+		{
+			for (size_t sx = 0; sx < 2; ++sx)
+			{
+				r = vec();
+				for (size_t s = 0; s < samples; ++s)
+				{
+					double r1 = 2 * get_random_number(), dx = r1 < 1 ? sqrt(r1) - 1 : 1 - sqrt(2 - r1);
+					double r2 = 2 * get_random_number(), dy = r2 < 1 ? sqrt(r2) - 1 : 1 - sqrt(2 - r2);
+					vec direction = cx * static_cast<double>(((sx + 0.5 + dx) / 2 + x) / dimension - 0.5) + cy * static_cast<double>(((sy + 0.5 + dy) / 2 + y) / dimension - 0.5) + camera.direction;
+					r = r + radiance(spheres, ray(camera.origin + direction * 140, direction.normal()), 0) * (1.0 / samples);
+				}
+				pixels[i] = pixels[i] + vec(clamp(r.x, 0.0, 1.0), clamp(r.y, 0.0, 1.0), clamp(r.z, 0.0, 1.0)) * 0.25;
+			}
+		}
+	}
+}
 int main(int argc, char **argv)
 {
 	for (size_t y = 0; y < 10; ++y)
@@ -313,8 +335,8 @@ int main(int argc, char **argv)
 		auto get_random_number = bind(distribution, generator);
 
 		// *** These parameters can be manipulated in the algorithm to modify work undertaken ***
-		constexpr size_t dimension = 512;
-		constexpr size_t samples = 1; // Algorithm performs 4 * samples per pixel.
+		constexpr size_t dimension = 1024;
+		constexpr size_t samples = 16; // Algorithm performs 4 * samples per pixel.
 		vector<sphere> spheres
 		{
 			sphere(1e5, vec(1e5 + 1, 40.8, 81.6), vec(), vec(0.75, 0.25, 0.25), reflection_type::DIFFUSE),
@@ -335,31 +357,16 @@ int main(int argc, char **argv)
 		vec cx = vec(0.5135);
 		vec cy = (cx.cross(camera.direction)).normal() * 0.5135;
 		vec r;
-		vector<vec> pixels(dimension * dimension);
-
-        //#pragma omp parallel for num_threads(4)
+		pixels.resize(dimension * dimension);
+		
+		//#pragma omp parallel for num_threads(4)
 		for (int y = 0; y < dimension; ++y)
 		{
-			//cout << "Rendering " << dimension << " * " << dimension << "pixels. Samples:" << samples * 4 << " spp (" << 100.0 * y / (dimension - 1) << ")" << endl;
-			for (size_t x = 0; x < dimension; ++x)
-			{
-				for (size_t sy = 0, i = (dimension - y - 1) * dimension + x; sy < 2; ++sy)
-				{
-					for (size_t sx = 0; sx < 2; ++sx)
-					{
-						r = vec();
-						for (size_t s = 0; s < samples; ++s)
-						{
-							double r1 = 2 * get_random_number(), dx = r1 < 1 ? sqrt(r1) - 1 : 1 - sqrt(2 - r1);
-							double r2 = 2 * get_random_number(), dy = r2 < 1 ? sqrt(r2) - 1 : 1 - sqrt(2 - r2);
-							vec direction = cx * static_cast<double>(((sx + 0.5 + dx) / 2 + x) / dimension - 0.5) + cy * static_cast<double>(((sy + 0.5 + dy) / 2 + y) / dimension - 0.5) + camera.direction;
-							r = r + radiance(spheres, ray(camera.origin + direction * 140, direction.normal()), 0) * (1.0 / samples);
-						}
-						pixels[i] = pixels[i] + vec(clamp(r.x, 0.0, 1.0), clamp(r.y, 0.0, 1.0), clamp(r.z, 0.0, 1.0)) * 0.25;
-					}
-				}
-			}
+			thread t(thr, y ,dimension, samples, get_random_number, r, cx, cy, spheres, camera);
+			t.join();
+			pixels.clear();
 		}
+
 		//cout << "img.bmp" << (array2bmp("img.bmp", pixels, dimension, dimension) ? " Saved\n" : " Save Failed\n");
 		duration = (std::clock() - start) / (double)CLOCKS_PER_SEC;
 		std::cout << "printf: " << duration << '\n';
