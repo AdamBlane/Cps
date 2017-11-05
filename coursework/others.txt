@@ -11,7 +11,7 @@ number of objects in scene 2
 number of objects in scene 4
 { 3.563 3.395 3.355 3.404 3.404 3.484 3.457 3.447 3.449 3.476
 
-number of objects in scene 8
+number of objects in scene 8 OP
 {printf: 4.402
 printf: 4.201
 printf: 4.246
@@ -23,7 +23,7 @@ printf: 4.233
 printf: 4.287
 printf: 4.238}
 
-number of objects in scene 16
+number of objects in scene 16 OP
 {printf: 4.625
 printf: 4.546
 printf: 4.633
@@ -35,7 +35,7 @@ printf: 4.512
 printf: 4.472
 printf: 4.425}
 
-number of objects in scene 32
+number of objects in scene 32 OP
 {printf: 5.822
 printf: 5.646
 printf: 5.659
@@ -46,3 +46,40 @@ printf: 5.91
 printf: 5.845
 printf: 5.74
 printf: 5.657}
+
+samples used 16 BO
+{printf: 19.827
+printf: 19.772
+printf: 19.744
+printf: 19.77
+printf: 19.765
+printf: 19.785
+printf: 19.769
+printf: 19.756
+printf: 19.673
+printf: 19.736}
+
+samples used 64 BO
+{printf: 74.622
+printf: 74.334
+printf: 75.88
+printf: 77.811
+printf: 78.019
+printf: 78.152
+printf: 78.191
+printf: 77.841
+printf: 78.099
+printf: 77.957}
+
+samples used 256{
+printf: 299.435
+printf: 310.491
+printf: 309.238
+printf: 308.725
+printf: 309.736
+printf: 309.646
+printf: 309.636
+printf: 309.818}
+
+}
+
