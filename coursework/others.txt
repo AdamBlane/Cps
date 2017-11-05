@@ -2,3 +2,47 @@ Samples 16
 {205.878,205.41,205.82,205.748,205.006}
 samples
 {416.194,411.794,411.792}
+number of objects in scene 1
+{4.206,4.079,4.086,4.105,4.238,4.262, 4.257,4.233,4.207,4.138}
+
+number of objects in scene 2
+{4.1,3.969,3.999,4.073,4.059,4.007, 3.965,4.000,3.968,3.982}
+
+number of objects in scene 4
+{ 3.563 3.395 3.355 3.404 3.404 3.484 3.457 3.447 3.449 3.476
+
+number of objects in scene 8
+{printf: 4.402
+printf: 4.201
+printf: 4.246
+printf: 4.165
+printf: 4.253
+printf: 4.259
+printf: 4.232
+printf: 4.233
+printf: 4.287
+printf: 4.238}
+
+number of objects in scene 16
+{printf: 4.625
+printf: 4.546
+printf: 4.633
+printf: 4.54
+printf: 4.497
+printf: 4.458
+printf: 4.49
+printf: 4.512
+printf: 4.472
+printf: 4.425}
+
+number of objects in scene 32
+{printf: 5.822
+printf: 5.646
+printf: 5.659
+printf: 5.722
+printf: 5.856
+printf: 5.638
+printf: 5.91
+printf: 5.845
+printf: 5.74
+printf: 5.657}
