@@ -1,0 +1,43 @@
+512{
+printf: 3.503
+printf: 3.399
+printf: 3.392
+printf: 3.365
+printf: 3.368
+printf: 3.458
+printf: 3.365
+printf: 3.442
+printf: 3.361
+printf: 3.375}
+
+1024{printf: 13.467
+printf: 13.22
+printf: 13.218
+printf: 13.185
+printf: 13.109
+printf: 13.068
+printf: 13.105
+printf: 13.222
+printf: 13.045
+printf: 13.183}
+
+2048{printf: 50.145
+printf: 50.054
+printf: 50.057
+printf: 49.767
+printf: 49.149
+printf: 49.112
+printf: 49.109
+printf: 49.317
+printf: 49.201
+printf: 49.066
+}
+
+4096{ printf: 196.007
+printf: 193.377
+printf: 193.147
+printf: 192.857
+printf: 192.789
+printf: 193.08
+printf: 193.206
+}
