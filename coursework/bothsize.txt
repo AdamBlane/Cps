@@ -1,0 +1,54 @@
+512{
+printf: 1.526
+printf: 1.396
+printf: 1.379
+printf: 1.389
+printf: 1.4
+printf: 1.394
+printf: 1.388
+printf: 1.38
+printf: 1.385
+printf: 1.397}
+
+1024{printf: 5.322
+printf: 5.188
+printf: 5.228
+printf: 5.204
+printf: 5.195
+printf: 5.199
+printf: 5.169
+printf: 5.235
+printf: 5.211
+printf: 5.233}
+
+2048{printf: 20.201
+printf: 20.642
+printf: 20.092
+printf: 20.097
+printf: 20.452
+printf: 20.11
+printf: 20.166
+printf: 20.069
+printf: 20.063
+printf: 20.2
+}
+
+4096{printf: 79.049
+printf: 78.679
+printf: 78.573
+printf: 78.659
+printf: 78.601
+printf: 78.6
+printf: 78.68
+printf: 78.9
+printf: 78.828
+printf: 78.815}
+
+4096 but not{
+printf: 193.516
+printf: 193.481
+printf: 193.607
+printf: 193.11
+printf: 193.371
+}
+
