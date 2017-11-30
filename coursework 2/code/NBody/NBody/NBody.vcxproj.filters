@@ -15,40 +15,19 @@
     </Filter>
   </ItemGroup>
   <ItemGroup>
-    <ClCompile Include="main.cpp">
+    <ClCompile Include="nbody.cc">
       <Filter>Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="NBody.cpp">
-      <Filter>Source Files</Filter>
-    </ClCompile>
-    <ClCompile Include="phys.cpp">
-      <Filter>Source Files</Filter>
-    </ClCompile>
-    <ClCompile Include="tree.cpp">
-      <Filter>Source Files</Filter>
-    </ClCompile>
-    <ClCompile Include="graphics\displayimage.cpp">
-      <Filter>Source Files</Filter>
-    </ClCompile>
-    <ClCompile Include="timing\timing.cpp">
+    <ClCompile Include="Particle.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
-    <ClInclude Include="phys.hpp">
-      <Filter>Source Files</Filter>
-    </ClInclude>
-    <ClInclude Include="tree.hpp">
-      <Filter>Source Files</Filter>
-    </ClInclude>
-    <ClInclude Include="vec.hpp">
-      <Filter>Source Files</Filter>
-    </ClInclude>
-    <ClInclude Include="graphics\displayimage.hpp">
-      <Filter>Source Files</Filter>
-    </ClInclude>
-    <ClInclude Include="timing\timing.hpp">
-      <Filter>Source Files</Filter>
+    <None Include="packages.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="Particle.h">
+      <Filter>Header Files</Filter>
     </ClInclude>
   </ItemGroup>
 </Project>
