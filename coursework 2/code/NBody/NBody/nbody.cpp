@@ -15,7 +15,7 @@
 
 
 vector<Particle*> p;
-const float dt = 0.1f;// time step
+const float dt = 0.01f;// time step
 int nParticles = 0;
 const int nIters = 10;  // simulation iterations
 
@@ -99,7 +99,7 @@ int main(const int argc, const char** argv)
 	ALLEGRO_DISPLAY* display = al_create_display(800, 600);
 
 	auto start = std::chrono::system_clock::now();
-	int b =4000;
+	int b =1000;
 	for (int j =0 ; j <=6 ; j++)
 	{ 
 		nParticles += b;
