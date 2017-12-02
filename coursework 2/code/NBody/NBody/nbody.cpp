@@ -15,8 +15,8 @@
 
 
 vector<Particle*> p;
-const float dt = 1.0f;// time step
-int nParticles = 250;
+const float dt = 0.1f;// time step
+int nParticles = 0;
 const int nIters = 10;  // simulation iterations
 
 int bytes = nParticles * sizeof(p);
@@ -72,8 +72,8 @@ void ParticleForce(vector<Particle*> p, float dt, int n , int b)
 				Fy += /*(p[i]->mass )*/  dy * invDist3;
 			//}
 		}
-		p[i]->vx += dt* Fx * b;
-		p[i]->vy += dt* Fy * b;
+		p[i]->vx += dt* Fx;
+		p[i]->vy += dt* Fy;
 	}
 	for (int i = 0; i < n; i++)
 	{
@@ -99,12 +99,12 @@ int main(const int argc, const char** argv)
 	ALLEGRO_DISPLAY* display = al_create_display(800, 600);
 
 	auto start = std::chrono::system_clock::now();
-	int b =250;
-	for (int j =0 ; j <= 16 ; j++)
-	{
+	int b =4000;
+	for (int j =0 ; j <=6 ; j++)
+	{ 
+		nParticles += b;
 		for (int iter = 0; iter <= nIters; iter++)
 		{
-			nParticles += b;
 			p.clear();
 			CreateParticles(nParticles);
 			auto current_start = std::chrono::system_clock::now();

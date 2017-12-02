@@ -1,0 +1,6 @@
+﻿  Particle.cpp
+  nbody.cc
+  Generating Code...
+nbody.obj : error LNK2019: unresolved external symbol __imp_al_init_primitives_addon referenced in function main
+nbody.obj : error LNK2019: unresolved external symbol __imp_al_draw_filled_circle referenced in function "void __cdecl DrawParticles(void)" (?DrawParticles@@YAXXZ)
+C:\Users\40161070\Documents\GitHub\Cps\coursework 2\code\NBody\x64\Debug\NBody.exe : fatal error LNK1120: 2 unresolved externals
