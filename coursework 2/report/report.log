@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.18 (TeX Live 2017/W32TeX) (preloaded format=pdflatex 2017.11.4)  2 DEC 2017 23:26
+This is pdfTeX, Version 3.14159265-2.6-1.40.18 (TeX Live 2017/W32TeX) (preloaded format=pdflatex 2017.11.4)  3 DEC 2017 02:45
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -208,11 +208,6 @@ Package pdftex.def Info: pics/iatime.png  used on input line 48. on input line
 48.
 Package pdftex.def Info: Requested size: 362.10193pt x 108.40472pt on input lin
 e 48.
-
-Underfull \hbox (badness 10000) in paragraph at lines 48--50
-
- []
-
 <pics/ianumber.png, id=21, 724.20563pt x 216.81pt>
 File: pics/ianumber.png Graphic file (type png)
 <use pics/ianumber.png>
@@ -225,26 +220,41 @@ Underfull \hbox (badness 10000) in paragraph at lines 52--57
 
  []
 
-[4 <./pics/iatime.png> <./pics/ianumber.png>] [5] [6] (./report.aux) ) 
+[4 <./pics/iatime.png> <./pics/ianumber.png>] [5]
+<pics/optest.png, id=28, 710.655pt x 217.5628pt>
+File: pics/optest.png Graphic file (type png)
+<use pics/optest.png>
+Package pdftex.def Info: pics/optest.png  used on input line 84. on input line 
+84.
+Package pdftex.def Info: Requested size: 355.32663pt x 108.78113pt on input lin
+e 84.
+<pics/opspeedup.png, id=29, 389.20406pt x 30.86531pt>
+File: pics/opspeedup.png Graphic file (type png)
+<use pics/opspeedup.png>
+Package pdftex.def Info: pics/opspeedup.png  used on input line 86. on input li
+ne 86.
+Package pdftex.def Info: Requested size: 272.44098pt x 21.60555pt on input line
+ 86.
+ [6 <./pics/optest.png> <./pics/opspeedup.png>] [7] (./report.aux) ) 
 Here is how much of TeX's memory you used:
- 5389 strings out of 492985
- 102250 string characters out of 6136284
+ 5399 strings out of 492985
+ 102443 string characters out of 6136284
  160171 words of memory out of 5000000
- 8928 multiletter control sequences out of 15000+600000
+ 8936 multiletter control sequences out of 15000+600000
  7235 words of font info for 26 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
  53i,6n,92p,830b,339s stack positions out of 5000i,500n,10000p,200000b,80000s
-<d:/texli
-ve/2017/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx10.pfb><d:/texlive/2017/t
-exmf-dist/fonts/type1/public/amsfonts/cm/cmbx12.pfb><d:/texlive/2017/texmf-dist
-/fonts/type1/public/amsfonts/cm/cmr10.pfb><d:/texlive/2017/texmf-dist/fonts/typ
-e1/public/amsfonts/cm/cmr12.pfb><d:/texlive/2017/texmf-dist/fonts/type1/public/
-amsfonts/cm/cmr17.pfb><d:/texlive/2017/texmf-dist/fonts/type1/public/amsfonts/c
-m/cmsy10.pfb>
-Output written on report.pdf (6 pages, 133344 bytes).
+<d:/texlive
+/2017/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx10.pfb><d:/texlive/2017/tex
+mf-dist/fonts/type1/public/amsfonts/cm/cmbx12.pfb><d:/texlive/2017/texmf-dist/f
+onts/type1/public/amsfonts/cm/cmr10.pfb><d:/texlive/2017/texmf-dist/fonts/type1
+/public/amsfonts/cm/cmr12.pfb><d:/texlive/2017/texmf-dist/fonts/type1/public/am
+sfonts/cm/cmr17.pfb><d:/texlive/2017/texmf-dist/fonts/type1/public/amsfonts/cm/
+cmsy10.pfb>
+Output written on report.pdf (7 pages, 155026 bytes).
 PDF statistics:
- 51 PDF objects out of 1000 (max. 8388607)
- 32 compressed objects within 1 object stream
+ 58 PDF objects out of 1000 (max. 8388607)
+ 36 compressed objects within 1 object stream
  0 named destinations out of 1000 (max. 500000)
- 21 words of extra memory for PDF output out of 10000 (max. 10000000)
+ 31 words of extra memory for PDF output out of 10000 (max. 10000000)
 

@@ -47,7 +47,7 @@ The reason for measuring the length of the simulation was to see if a drop off o
 \subsubsection{Size of Times Step}
 \includegraphics[scale=0.5]{pics/iatime.png}
 \newline
-
+The second measurement that was taken to check if changing the time step effected the results. This could occur if drawing objects on screen caused a bottleneck and the speed of moving the on screen caused a frame-rate drop. As shown in the results, this is not the case. The frame rate and speed both stayed the same the entire time the programme was run.
 \subsubsection{ Number of Particles}
 \includegraphics[scale=0.5]{pics/ianumber.png}
 \newline
@@ -75,12 +75,27 @@ CUDA is a  parallel computing platform and application programming interface mod
 \newline
  To carry out the task of adding CUDA to the application, a different approach was taken as CUDA is more complicated to add then OpenMP. Once CUDA was installed in Visual Studio it was discovered that the code would have to be completely reworked to add CUDA into the programme. This may not have been the case but a lack of overall knowledge in the background of CUDA restricted the outcome of the project.
  \newline 
- The place that the parrelization was to be added would be the same place as OpenMP however before this could be implemented the code needed to be converted to a kernal.
+ The place that the parrelization was to be added would be the same place as OpenMP however before this could be implemented the code needed to be converted to a kernal.///needmore///
 
 \section{Results}
-
+\subsection{OpenMP}
+The first results that are shown are the OpenMP results.
+\newline
+\includegraphics[scale=0.5]{pics/optest.png}
+\newline
+\includegraphics[scale=0.7]{pics/opspeedup.png}
+\newline
+If we compare this with the sequential results, The difference very large although this is to be expected.  
+\subsection{CUDA}
 \section{Conclusion}
-
+In this project two of the most well-known parralelization techniques were correlated
+against each other and while CUDA had the highest speed up of the two. It is important to note that OpenMP is more useful to a weak programmer because of its  easiness to set up. Working with an N-Body simulation allowed for a swift discovery of the bottleneck and allowed more focus to be placed parralelizing the algorithm rather then the initial analysis. 
+\subsection{Limitations}
+The main limitation of this project was the hardware. While the computers that these tests were performed was very powerful. It still became a limiting factor when running large amounts of particles.
+\subsection{Future Work}
+Several optimizations could be made to CUDA system including using parallel compilers which come include in the CUDA library. BEcause of OpenMPs simplicity it is harder to optimize later on however combining it with CUDA could be investigated to see if it increased speed up even more. Another idea to improve the overall performance of the program could be to make some assumptions about N-Body simulation, ie group particles mass together if their in a certain direction. 
+\subsection{Final Thoughts}
+During this project I enjoyed creating and implementing an N-Body simulation. While the biggest challenge in this project was implementing CUDA it was still very interesting to properly implement it into my own programme.
 
 	
 \end{document}
