@@ -1,6 +1,6 @@
 #define SOFTENING 2E4
 #define _USE_MATH_DEFINES
-#define nParticles 2250
+#define nParticles 3250
 #define dt 0.1f;// time step
 
 #include "cuda_runtime.h"
@@ -31,10 +31,9 @@ struct Particle
 Particle p[nParticles];
 Particle *singlep;
 const int nIters = 10;  // simulation iterations
-int Block = 8;
-int bytes = nParticles * sizeof(p);
+int Block = 16;
+long bytes;
 float *buf = (float*)malloc(bytes);
-int Thread_count = std::thread::hardware_concurrency();
 
 void CreateParticles()
 {
@@ -77,19 +76,21 @@ void DrawParticles()
 {
 	for (int i = 0; i < nParticles; i++)
 	{
+		p[i].x += p[i].vx*dt;
+		p[i].y += p[i].vy*dt;
 		al_draw_filled_circle((800 / 2) + ((int)p[i].x) / 10, (600 / 2) + ((int)p[i].y) / 10, 1.75f, p[i].colour);
 	}
 }
 void Init()
 {
 	srand(time(NULL));
-	cudaSetDevice(0);
-	float many_partciles = sizeof(p) * nParticles;
-	cudaMalloc((void**)&singlep, many_partciles);
 	al_init();
 	al_init_primitives_addon();
 	ALLEGRO_DISPLAY* display = al_create_display(800, 600);
 
+	cudaSetDevice(0);
+	bytes = sizeof(p) * nParticles;
+	cudaMalloc((void**)&singlep, bytes);
 }
 __global__
 void ParticleForce(Particle* singlep)
@@ -109,17 +110,12 @@ void ParticleForce(Particle* singlep)
 	singlep[i].vx += Fx * dt;
 	singlep[i].vy += Fy * dt ;
 	__syncthreads();
-	for (int i = 0; i < nParticles; i++)
-	{
-		singlep[i].x += singlep[i].vx*dt;
-		singlep[i].y += singlep[i].vy*dt;
-	}
-
 }
 void runSim(int b)
 {
-	cudaMemcpy(singlep, &p, nParticles, cudaMemcpyHostToDevice);
-	ParticleForce << < Block, nParticles / Block >> > (singlep);
+	int number_of_blocks = (nParticles + Block - 1) / Block;
+	cudaMemcpy(singlep, &p, nParticles , cudaMemcpyHostToDevice);
+	ParticleForce << < number_of_blocks, Block >> > (singlep);
 	cudaDeviceSynchronize();
 	cudaMemcpy(&p, &singlep[0], nParticles, cudaMemcpyDeviceToHost);
 	DrawParticles();
