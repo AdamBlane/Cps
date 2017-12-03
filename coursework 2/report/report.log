@@ -1,14 +1,12 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.18 (TeX Live 2017/W32TeX) (preloaded format=pdflatex 2017.11.4)  3 DEC 2017 02:45
+This is pdfTeX, Version 3.14159265-2.6-1.40.18 (MiKTeX 2.9.6350 64-bit) (preloaded format=pdflatex 2017.12.1)  3 DEC 2017 16:51
 entering extended mode
- restricted \write18 enabled.
- %&-line parsing enabled.
 **./report.tex
-(./report.tex
+(report.tex
 LaTeX2e <2017-04-15>
-Babel <3.15> and hyphenation patterns for 84 language(s) loaded.
-(d:/texlive/2017/texmf-dist/tex/latex/base/article.cls
+Babel <3.10> and hyphenation patterns for 75 language(s) loaded.
+("C:\Program Files\MiKTeX 2.9\tex\latex\base\article.cls"
 Document Class: article 2014/09/29 v1.4h Standard LaTeX document class
-(d:/texlive/2017/texmf-dist/tex/latex/base/size12.clo
+("C:\Program Files\MiKTeX 2.9\tex\latex\base\size12.clo"
 File: size12.clo 2014/09/29 v1.4h Standard LaTeX file (size option)
 )
 \c@part=\count79
@@ -23,56 +21,42 @@ File: size12.clo 2014/09/29 v1.4h Standard LaTeX file (size option)
 \belowcaptionskip=\skip42
 \bibindent=\dimen102
 )
-(d:/texlive/2017/texmf-dist/tex/latex/graphics/graphicx.sty
-Package: graphicx 2017/06/01 v1.1a Enhanced LaTeX Graphics (DPC,SPQR)
+("C:\Program Files\MiKTeX 2.9\tex\latex\graphics\graphicx.sty"
+Package: graphicx 2014/10/28 v1.0g Enhanced LaTeX Graphics (DPC,SPQR)
 
-(d:/texlive/2017/texmf-dist/tex/latex/graphics/keyval.sty
+("C:\Program Files\MiKTeX 2.9\tex\latex\graphics\keyval.sty"
 Package: keyval 2014/10/28 v1.15 key=value parser (DPC)
 \KV@toks@=\toks14
 )
-(d:/texlive/2017/texmf-dist/tex/latex/graphics/graphics.sty
-Package: graphics 2017/06/25 v1.2c Standard LaTeX Graphics (DPC,SPQR)
+("C:\Program Files\MiKTeX 2.9\tex\latex\graphics\graphics.sty"
+Package: graphics 2017/04/14 v1.1b Standard LaTeX Graphics (DPC,SPQR)
 
-(d:/texlive/2017/texmf-dist/tex/latex/graphics/trig.sty
+("C:\Program Files\MiKTeX 2.9\tex\latex\graphics\trig.sty"
 Package: trig 2016/01/03 v1.10 sin cos tan (DPC)
 )
-(d:/texlive/2017/texmf-dist/tex/latex/graphics-cfg/graphics.cfg
+("C:\Program Files\MiKTeX 2.9\tex\latex\graphics-cfg\graphics.cfg"
 File: graphics.cfg 2016/06/04 v1.11 sample graphics configuration
 )
 Package graphics Info: Driver file: pdftex.def on input line 99.
 
-(d:/texlive/2017/texmf-dist/tex/latex/graphics-def/pdftex.def
-File: pdftex.def 2017/06/24 v1.0g Graphics/color driver for pdftex
+("C:\Program Files\MiKTeX 2.9\tex\latex\graphics-def\pdftex.def"
+File: pdftex.def 2017/01/12 v0.06k Graphics/color for pdfTeX
+
+("C:\Program Files\MiKTeX 2.9\tex\generic\oberdiek\infwarerr.sty"
+Package: infwarerr 2016/05/16 v1.4 Providing info/warning/error messages (HO)
+)
+("C:\Program Files\MiKTeX 2.9\tex\generic\oberdiek\ltxcmds.sty"
+Package: ltxcmds 2016/05/16 v1.23 LaTeX kernel commands for general use (HO)
+)
+\Gread@gobject=\count87
 ))
 \Gin@req@height=\dimen103
 \Gin@req@width=\dimen104
 )
-(d:/texlive/2017/texmf-dist/tex/latex/datetime2/datetime2.sty
-Package: datetime2 2016/07/12 v1.5.2 (NLCT) date and time formats
-
-(d:/texlive/2017/texmf-dist/tex/latex/tracklang/tracklang.sty
-Package: tracklang 2017/03/25 v1.3.4 (NLCT) Track Languages
-
-(d:/texlive/2017/texmf-dist/tex/generic/tracklang/tracklang.tex))
-(d:/texlive/2017/texmf-dist/tex/latex/etoolbox/etoolbox.sty
-Package: etoolbox 2017/01/02 v2.4 e-TeX tools for LaTeX (JAW)
-\etb@tempcnta=\count87
-)
-(d:/texlive/2017/texmf-dist/tex/latex/xkeyval/xkeyval.sty
-Package: xkeyval 2014/12/03 v2.7a package option processing (HA)
-
-(d:/texlive/2017/texmf-dist/tex/generic/xkeyval/xkeyval.tex
-(d:/texlive/2017/texmf-dist/tex/generic/xkeyval/xkvutils.tex
-\XKV@toks=\toks15
-\XKV@tempa@toks=\toks16
-)
-\XKV@depth=\count88
-File: xkeyval.tex 2014/12/03 v2.7a key=value parser (HA)
-)))
-(d:/texlive/2017/texmf-dist/tex/latex/caption/caption.sty
+("C:\Program Files\MiKTeX 2.9\tex\latex\caption\caption.sty"
 Package: caption 2016/02/21 v3.3-144 Customizing captions (AR)
 
-(d:/texlive/2017/texmf-dist/tex/latex/caption/caption3.sty
+("C:\Program Files\MiKTeX 2.9\tex\latex\caption\caption3.sty"
 Package: caption3 2016/05/22 v1.7-166 caption3 kernel (AR)
 Package caption3 Info: TeX engine: e-TeX on input line 67.
 \captionmargin=\dimen105
@@ -83,74 +67,134 @@ Package caption3 Info: TeX engine: e-TeX on input line 67.
 \caption@parindent=\dimen110
 \caption@hangindent=\dimen111
 )
-\c@ContinuedFloat=\count89
-) (./report.aux)
+\c@ContinuedFloat=\count88
+)
+("C:\Program Files\MiKTeX 2.9\tex\latex\dblfloatfix\dblfloatfix.sty"
+Package: dblfloatfix 2012/12/31 v1.0a (JAW)
+
+("C:\Program Files\MiKTeX 2.9\tex\latex\base\fixltx2e.sty"
+Package: fixltx2e 2016/12/29 v2.1a fixes to LaTeX (obsolete)
+Applying: [2015/01/01] Old fixltx2e package on input line 46.
+
+
+Package fixltx2e Warning: fixltx2e is not required with releases after 2015
+(fixltx2e)                All fixes are now in the LaTeX kernel.
+(fixltx2e)                See the latexrelease package for details.
+
+Already applied: [0000/00/00] Old fixltx2e package on input line 53.
+)
+\@dblbotnum=\count89
+\c@dblbotnumber=\count90
+) ("C:\Program Files\MiKTeX 2.9\tex\latex\url\url.sty"
+\Urlmuskip=\muskip10
+Package: url 2013/09/16  ver 3.4  Verb mode for urls, etc.
+)
+("C:\Program Files\MiKTeX 2.9\tex\latex\lipsum\lipsum.sty"
+Package: lipsum 2014/07/27 v1.3 150 paragraphs of Lorem Ipsum dummy text
+\c@lips@count=\count91
+)
+("C:\Program Files\MiKTeX 2.9\tex\latex\xcolor\xcolor.sty"
+Package: xcolor 2016/05/11 v2.12 LaTeX color extensions (UK)
+
+("C:\Program Files\MiKTeX 2.9\tex\latex\graphics-cfg\color.cfg"
+File: color.cfg 2016/01/02 v1.6 sample color configuration
+)
+Package xcolor Info: Driver file: pdftex.def on input line 225.
+Package xcolor Info: Model `cmy' substituted by `cmy0' on input line 1348.
+Package xcolor Info: Model `hsb' substituted by `rgb' on input line 1352.
+Package xcolor Info: Model `RGB' extended on input line 1364.
+Package xcolor Info: Model `HTML' substituted by `rgb' on input line 1366.
+Package xcolor Info: Model `Hsb' substituted by `hsb' on input line 1367.
+Package xcolor Info: Model `tHsb' substituted by `hsb' on input line 1368.
+Package xcolor Info: Model `HSB' substituted by `hsb' on input line 1369.
+Package xcolor Info: Model `Gray' substituted by `gray' on input line 1370.
+Package xcolor Info: Model `wave' substituted by `hsb' on input line 1371.
+)
+("C:\Program Files\MiKTeX 2.9\tex\latex\listings\listings.sty"
+\lst@mode=\count92
+\lst@gtempboxa=\box26
+\lst@token=\toks15
+\lst@length=\count93
+\lst@currlwidth=\dimen112
+\lst@column=\count94
+\lst@pos=\count95
+\lst@lostspace=\dimen113
+\lst@width=\dimen114
+\lst@newlines=\count96
+\lst@lineno=\count97
+\lst@maxwidth=\dimen115
+
+("C:\Program Files\MiKTeX 2.9\tex\latex\listings\lstmisc.sty"
+File: lstmisc.sty 2015/06/04 1.6 (Carsten Heinz)
+\c@lstnumber=\count98
+\lst@skipnumbers=\count99
+\lst@framebox=\box27
+)
+("C:\Program Files\MiKTeX 2.9\tex\latex\listings\listings.cfg"
+File: listings.cfg 2015/06/04 1.6 listings configuration
+))
+Package: listings 2015/06/04 1.6 (Carsten Heinz)
+
+! Undefined control sequence.
+<recently read> \g 
+                   
+l.12 \g
+       @addto@macro\@floatboxreset{\centering}
+The control sequence at the end of the top line
+of your error message was never \def'ed. If you have
+misspelled it (e.g., `\hobx'), type `I' and the correct
+spelling (e.g., `I\hbox'). Otherwise just continue,
+and I'll forget about whatever was undefined.
+
+
+! LaTeX Error: Missing \begin{document}.
+
+See the LaTeX manual or LaTeX Companion for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.12 \g@
+        addto@macro\@floatboxreset{\centering}
+You're in trouble here.  Try typing  <return>  to proceed.
+If that doesn't work, type  X <return>  to quit.
+
+(report.aux)
 \openout1 = `report.aux'.
 
-LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 10.
-LaTeX Font Info:    ... okay on input line 10.
-LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 10.
-LaTeX Font Info:    ... okay on input line 10.
-LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 10.
-LaTeX Font Info:    ... okay on input line 10.
-LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 10.
-LaTeX Font Info:    ... okay on input line 10.
-LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 10.
-LaTeX Font Info:    ... okay on input line 10.
-LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 10.
-LaTeX Font Info:    ... okay on input line 10.
-
-(d:/texlive/2017/texmf-dist/tex/context/base/mkii/supp-pdf.mkii
+LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 14.
+LaTeX Font Info:    ... okay on input line 14.
+LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 14.
+LaTeX Font Info:    ... okay on input line 14.
+LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 14.
+LaTeX Font Info:    ... okay on input line 14.
+LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 14.
+LaTeX Font Info:    ... okay on input line 14.
+LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 14.
+LaTeX Font Info:    ... okay on input line 14.
+LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 14.
+LaTeX Font Info:    ... okay on input line 14.
+ ("C:\Program Files\MiKTeX 2.9\tex\context\base\supp-pdf.mkii"
 [Loading MPS to PDF converter (version 2006.09.02).]
-\scratchcounter=\count90
-\scratchdimen=\dimen112
-\scratchbox=\box26
-\nofMPsegments=\count91
-\nofMParguments=\count92
-\everyMPshowfont=\toks17
-\MPscratchCnt=\count93
-\MPscratchDim=\dimen113
-\MPnumerator=\count94
-\makeMPintoPDFobject=\count95
-\everyMPtoPDFconversion=\toks18
-) (d:/texlive/2017/texmf-dist/tex/latex/oberdiek/epstopdf-base.sty
-Package: epstopdf-base 2016/05/15 v2.6 Base part for package epstopdf
-
-(d:/texlive/2017/texmf-dist/tex/generic/oberdiek/infwarerr.sty
-Package: infwarerr 2016/05/16 v1.4 Providing info/warning/error messages (HO)
-)
-(d:/texlive/2017/texmf-dist/tex/latex/oberdiek/grfext.sty
-Package: grfext 2016/05/16 v1.2 Manage graphics extensions (HO)
-
-(d:/texlive/2017/texmf-dist/tex/generic/oberdiek/kvdefinekeys.sty
-Package: kvdefinekeys 2016/05/16 v1.4 Define keys (HO)
-
-(d:/texlive/2017/texmf-dist/tex/generic/oberdiek/ltxcmds.sty
-Package: ltxcmds 2016/05/16 v1.23 LaTeX kernel commands for general use (HO)
-)))
-(d:/texlive/2017/texmf-dist/tex/latex/oberdiek/kvoptions.sty
-Package: kvoptions 2016/05/16 v3.12 Key value format for package options (HO)
-
-(d:/texlive/2017/texmf-dist/tex/generic/oberdiek/kvsetkeys.sty
-Package: kvsetkeys 2016/05/16 v1.17 Key value parser (HO)
-
-(d:/texlive/2017/texmf-dist/tex/generic/oberdiek/etexcmds.sty
-Package: etexcmds 2016/05/16 v1.6 Avoid name clashes with e-TeX commands (HO)
-
-(d:/texlive/2017/texmf-dist/tex/generic/oberdiek/ifluatex.sty
-Package: ifluatex 2016/05/16 v1.4 Provides the ifluatex switch (HO)
-Package ifluatex Info: LuaTeX not detected.
-)
-Package etexcmds Info: Could not find \expanded.
-(etexcmds)             That can mean that you are not using pdfTeX 1.50 or
-(etexcmds)             that some package has redefined \expanded.
-(etexcmds)             In the latter case, load this package earlier.
-)))
-(d:/texlive/2017/texmf-dist/tex/generic/oberdiek/pdftexcmds.sty
+\scratchcounter=\count100
+\scratchdimen=\dimen116
+\scratchbox=\box28
+\nofMPsegments=\count101
+\nofMParguments=\count102
+\everyMPshowfont=\toks16
+\MPscratchCnt=\count103
+\MPscratchDim=\dimen117
+\MPnumerator=\count104
+\makeMPintoPDFobject=\count105
+\everyMPtoPDFconversion=\toks17
+) ("C:\Program Files\MiKTeX 2.9\tex\generic\oberdiek\pdftexcmds.sty"
 Package: pdftexcmds 2017/03/19 v0.25 Utility functions of pdfTeX for LuaTeX (HO
 )
 
-(d:/texlive/2017/texmf-dist/tex/generic/oberdiek/ifpdf.sty
+("C:\Program Files\MiKTeX 2.9\tex\generic\oberdiek\ifluatex.sty"
+Package: ifluatex 2016/05/16 v1.4 Provides the ifluatex switch (HO)
+Package ifluatex Info: LuaTeX not detected.
+)
+("C:\Program Files\MiKTeX 2.9\tex\generic\oberdiek\ifpdf.sty"
 Package: ifpdf 2017/03/15 v3.2 Provides the ifpdf switch
 )
 Package pdftexcmds Info: LuaTeX not detected.
@@ -158,103 +202,182 @@ Package pdftexcmds Info: \pdf@primitive is available.
 Package pdftexcmds Info: \pdf@ifprimitive is available.
 Package pdftexcmds Info: \pdfdraftmode found.
 )
+("C:\Program Files\MiKTeX 2.9\tex\latex\oberdiek\epstopdf-base.sty"
+Package: epstopdf-base 2016/05/15 v2.6 Base part for package epstopdf
+
+("C:\Program Files\MiKTeX 2.9\tex\latex\oberdiek\grfext.sty"
+Package: grfext 2016/05/16 v1.2 Manage graphics extensions (HO)
+
+("C:\Program Files\MiKTeX 2.9\tex\generic\oberdiek\kvdefinekeys.sty"
+Package: kvdefinekeys 2016/05/16 v1.4 Define keys (HO)
+))
+("C:\Program Files\MiKTeX 2.9\tex\latex\oberdiek\kvoptions.sty"
+Package: kvoptions 2016/05/16 v3.12 Key value format for package options (HO)
+
+("C:\Program Files\MiKTeX 2.9\tex\generic\oberdiek\kvsetkeys.sty"
+Package: kvsetkeys 2016/05/16 v1.17 Key value parser (HO)
+
+("C:\Program Files\MiKTeX 2.9\tex\generic\oberdiek\etexcmds.sty"
+Package: etexcmds 2016/05/16 v1.6 Avoid name clashes with e-TeX commands (HO)
+Package etexcmds Info: Could not find \expanded.
+(etexcmds)             That can mean that you are not using pdfTeX 1.50 or
+(etexcmds)             that some package has redefined \expanded.
+(etexcmds)             In the latter case, load this package earlier.
+)))
 Package epstopdf-base Info: Redefining graphics rule for `.eps' on input line 4
 38.
 Package grfext Info: Graphics extension search list:
-(grfext)             [.pdf,.png,.jpg,.mps,.jpeg,.jbig2,.jb2,.PDF,.PNG,.JPG,.JPE
+(grfext)             [.png,.pdf,.jpg,.mps,.jpeg,.jbig2,.jb2,.PNG,.PDF,.JPG,.JPE
 G,.JBIG2,.JB2,.eps]
 (grfext)             \AppendGraphicsExtensions on input line 456.
-
-(d:/texlive/2017/texmf-dist/tex/latex/latexconfig/epstopdf-sys.cfg
-File: epstopdf-sys.cfg 2010/07/13 v1.3 Configuration of (r)epstopdf for TeX Liv
-e
-))
+)
 Package caption Info: Begin \AtBeginDocument code.
+Package caption Info: listings package is loaded.
 Package caption Info: End \AtBeginDocument code.
-LaTeX Font Info:    External font `cmex10' loaded for size
-(Font)              <14.4> on input line 14.
-LaTeX Font Info:    External font `cmex10' loaded for size
-(Font)              <7> on input line 14.
-<pics/intro.png, id=1, 600.74437pt x 445.665pt>
-File: pics/intro.png Graphic file (type png)
-<use pics/intro.png>
-Package pdftex.def Info: pics/intro.png  used on input line 21. on input line 2
-1.
-Package pdftex.def Info: Requested size: 300.37144pt x 222.83195pt on input lin
-e 21.
+\c@lstlisting=\count106
  [1
 
-{d:/texlive/2017/texmf-var/fonts/map/pdftex/updmap/pdftex.map}] [2 <./pics/intr
-o.png>]
-LaTeX Font Info:    Try loading font information for OMS+cmr on input line 38.
+{C:/ProgramData/MiKTeX/2.9/pdftex/config/pdftex.map}]
+LaTeX Font Info:    External font `cmex10' loaded for size
+(Font)              <14.4> on input line 18.
+LaTeX Font Info:    External font `cmex10' loaded for size
+(Font)              <7> on input line 18.
 
-(d:/texlive/2017/texmf-dist/tex/latex/base/omscmr.fd
+<pics/intro.png, id=6, 600.74437pt x 445.665pt>
+File: pics/intro.png Graphic file (type png)
+ <use pics/intro.png>
+Package pdftex.def Info: pics/intro.png used on input line 24.
+(pdftex.def)             Requested size: 300.37144pt x 222.83195pt.
+ [2]
+[3 <./pics/intro.png>]
+LaTeX Font Info:    Try loading font information for OMS+cmr on input line 41.
+ ("C:\Program Files\MiKTeX 2.9\tex\latex\base\omscmr.fd"
 File: omscmr.fd 2014/09/29 v2.5h Standard LaTeX font definitions
 )
 LaTeX Font Info:    Font shape `OMS/cmr/m/n' in size <12> not available
-(Font)              Font shape `OMS/cmsy/m/n' tried instead on input line 38.
-<pics/ialength.png, id=15, 724.20563pt x 216.81pt>
+(Font)              Font shape `OMS/cmsy/m/n' tried instead on input line 41.
+<pics/ialength.png, id=17, 724.20563pt x 216.81pt>
 File: pics/ialength.png Graphic file (type png)
-<use pics/ialength.png>
-Package pdftex.def Info: pics/ialength.png  used on input line 44. on input lin
-e 44.
-Package pdftex.def Info: Requested size: 362.10193pt x 108.40472pt on input lin
-e 44.
- [3 <./pics/ialength.png>]
-<pics/iatime.png, id=20, 724.20563pt x 216.81pt>
-File: pics/iatime.png Graphic file (type png)
-<use pics/iatime.png>
-Package pdftex.def Info: pics/iatime.png  used on input line 48. on input line 
-48.
-Package pdftex.def Info: Requested size: 362.10193pt x 108.40472pt on input lin
-e 48.
-<pics/ianumber.png, id=21, 724.20563pt x 216.81pt>
-File: pics/ianumber.png Graphic file (type png)
-<use pics/ianumber.png>
-Package pdftex.def Info: pics/ianumber.png  used on input line 52. on input lin
-e 52.
-Package pdftex.def Info: Requested size: 362.10193pt x 108.40472pt on input lin
-e 52.
+ <use pics/ialength.png>
+Package pdftex.def Info: pics/ialength.png used on input line 47.
+(pdftex.def)             Requested size: 362.10193pt x 108.40472pt.
 
-Underfull \hbox (badness 10000) in paragraph at lines 52--57
+[4 <./pics/ialength.png>] <pics/iatime.png, id=24, 724.20563pt x 216.81pt>
+File: pics/iatime.png Graphic file (type png)
+
+<use pics/iatime.png>
+Package pdftex.def Info: pics/iatime.png used on input line 51.
+(pdftex.def)             Requested size: 362.10193pt x 108.40472pt.
+ <pics/ianumber.png, id=25, 724.20563pt x 216.81pt>
+File: pics/ianumber.png Graphic file (type png)
+
+<use pics/ianumber.png>
+Package pdftex.def Info: pics/ianumber.png used on input line 55.
+(pdftex.def)             Requested size: 362.10193pt x 108.40472pt.
+ (sourceCode/par.cpp
+LaTeX Font Info:    Try loading font information for OML+cmr on input line 1.
+
+("C:\Program Files\MiKTeX 2.9\tex\latex\base\omlcmr.fd"
+File: omlcmr.fd 2014/09/29 v2.5h Standard LaTeX font definitions
+)
+LaTeX Font Info:    Font shape `OML/cmr/m/n' in size <12> not available
+(Font)              Font shape `OML/cmm/m/it' tried instead on input line 1.
+ [5 <./pics/iatime.png> <./pics/ianumber.png>]
+LaTeX Font Info:    External font `cmex10' loaded for size
+(Font)              <12> on input line 3.
+LaTeX Font Info:    External font `cmex10' loaded for size
+(Font)              <8> on input line 3.
+LaTeX Font Info:    External font `cmex10' loaded for size
+(Font)              <6> on input line 3.
+
+Overfull \hbox (75.2992pt too wide) in paragraph at lines 10--11
+[][][][][][][][][][][][][][][][][][][][][][] 
+ []
+
+
+Overfull \hbox (40.04926pt too wide) in paragraph at lines 11--12
+[][][][][][][][][][][][][][][][][][][] 
+ []
+
+) [6] <pics/optest.png, id=33, 786.68906pt x 217.5628pt>
+File: pics/optest.png Graphic file (type png)
+ <use pics/optest.png>
+Package pdftex.def Info: pics/optest.png used on input line 87.
+(pdftex.def)             Requested size: 393.34357pt x 108.78113pt.
+
+<pics/opspeedup.png, id=34, 389.20406pt x 30.86531pt>
+File: pics/opspeedup.png Graphic file (type png)
+ <use pics/opspeedup.png>
+Package pdftex.def Info: pics/opspeedup.png used on input line 89.
+(pdftex.def)             Requested size: 272.44098pt x 21.60555pt.
+
+Overfull \hbox (3.34357pt too wide) in paragraph at lines 85--92
+[] 
+ []
+
+[7]
+
+! LaTeX Error: There's no line here to end.
+
+See the LaTeX manual or LaTeX Companion for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.93 \newline
+             
+Your command was ignored.
+Type  I <command> <return>  to replace it with another command,
+or  <return>  to continue without it.
+
+<pics/cudatest.png, id=39, 723.45282pt x 217.5628pt>
+File: pics/cudatest.png Graphic file (type png)
+ <use pics/cudatest.png>
+Package pdftex.def Info: pics/cudatest.png used on input line 94.
+(pdftex.def)             Requested size: 361.72552pt x 108.78113pt.
+
+<pics/cudaspeedup.png, id=40, 389.20406pt x 30.86531pt>
+File: pics/cudaspeedup.png Graphic file (type png)
+
+<use pics/cudaspeedup.png>
+Package pdftex.def Info: pics/cudaspeedup.png used on input line 96.
+(pdftex.def)             Requested size: 272.44098pt x 21.60555pt.
+
+Underfull \hbox (badness 10000) in paragraph at lines 94--98
 
  []
 
-[4 <./pics/iatime.png> <./pics/ianumber.png>] [5]
-<pics/optest.png, id=28, 710.655pt x 217.5628pt>
-File: pics/optest.png Graphic file (type png)
-<use pics/optest.png>
-Package pdftex.def Info: pics/optest.png  used on input line 84. on input line 
-84.
-Package pdftex.def Info: Requested size: 355.32663pt x 108.78113pt on input lin
-e 84.
-<pics/opspeedup.png, id=29, 389.20406pt x 30.86531pt>
-File: pics/opspeedup.png Graphic file (type png)
-<use pics/opspeedup.png>
-Package pdftex.def Info: pics/opspeedup.png  used on input line 86. on input li
-ne 86.
-Package pdftex.def Info: Requested size: 272.44098pt x 21.60555pt on input line
- 86.
- [6 <./pics/optest.png> <./pics/opspeedup.png>] [7] (./report.aux) ) 
+<pics/finalspeedup.png, id=41, 360.59718pt x 216.81pt>
+File: pics/finalspeedup.png Graphic file (type png)
+
+<use pics/finalspeedup.png>
+Package pdftex.def Info: pics/finalspeedup.png used on input line 99.
+(pdftex.def)             Requested size: 270.44722pt x 162.60709pt.
+
+Underfull \hbox (badness 10000) in paragraph at lines 99--101
+
+ []
+
+[8 <./pics/optest.png> <./pics/opspeedup.png> <./pics/cudatest.png> <./pics/cud
+aspeedup.png>] [9 <./pics/finalspeedup.png>] [10] (report.aux) ) 
 Here is how much of TeX's memory you used:
- 5399 strings out of 492985
- 102443 string characters out of 6136284
- 160171 words of memory out of 5000000
- 8936 multiletter control sequences out of 15000+600000
- 7235 words of font info for 26 fonts, out of 8000000 for 9000
+ 4588 strings out of 493323
+ 68436 string characters out of 3139057
+ 242975 words of memory out of 3000000
+ 8078 multiletter control sequences out of 15000+200000
+ 9416 words of font info for 33 fonts, out of 3000000 for 9000
  1141 hyphenation exceptions out of 8191
- 53i,6n,92p,830b,339s stack positions out of 5000i,500n,10000p,200000b,80000s
-<d:/texlive
-/2017/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx10.pfb><d:/texlive/2017/tex
-mf-dist/fonts/type1/public/amsfonts/cm/cmbx12.pfb><d:/texlive/2017/texmf-dist/f
-onts/type1/public/amsfonts/cm/cmr10.pfb><d:/texlive/2017/texmf-dist/fonts/type1
-/public/amsfonts/cm/cmr12.pfb><d:/texlive/2017/texmf-dist/fonts/type1/public/am
-sfonts/cm/cmr17.pfb><d:/texlive/2017/texmf-dist/fonts/type1/public/amsfonts/cm/
-cmsy10.pfb>
-Output written on report.pdf (7 pages, 155026 bytes).
+ 39i,7n,39p,572b,1379s stack positions out of 5000i,500n,10000p,200000b,50000s
+<C:/Program Fil
+es/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmbx10.pfb><C:/Program Files/MiKTe
+X 2.9/fonts/type1/public/amsfonts/cm/cmbx12.pfb><C:/Program Files/MiKTeX 2.9/fo
+nts/type1/public/amsfonts/cm/cmmi12.pfb><C:/Program Files/MiKTeX 2.9/fonts/type
+1/public/amsfonts/cm/cmr10.pfb><C:/Program Files/MiKTeX 2.9/fonts/type1/public/
+amsfonts/cm/cmr12.pfb><C:/Program Files/MiKTeX 2.9/fonts/type1/public/amsfonts/
+cm/cmr17.pfb><C:/Program Files/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmsy10
+.pfb>
+Output written on report.pdf (10 pages, 195626 bytes).
 PDF statistics:
- 58 PDF objects out of 1000 (max. 8388607)
- 36 compressed objects within 1 object stream
+ 78 PDF objects out of 1000 (max. 8388607)
  0 named destinations out of 1000 (max. 500000)
- 31 words of extra memory for PDF output out of 10000 (max. 10000000)
+ 46 words of extra memory for PDF output out of 10000 (max. 10000000)
 

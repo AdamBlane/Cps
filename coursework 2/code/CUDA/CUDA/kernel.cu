@@ -1,7 +1,11 @@
+//defines the softening to make sure inf do not occur
 #define SOFTENING 2E4
 #define _USE_MATH_DEFINES
-#define nParticles 3250
-#define dt 0.1f;// time step
+//number of particles in simulation
+#define nParticles 4000
+// time step
+#define dt 1.0f;
+ 
 
 #include "cuda_runtime.h"
 #include "device_launch_parameters.h"
@@ -18,6 +22,7 @@
 #include <curand.h>
 #include <curand_kernel.h>
 
+//particle struct
 struct Particle
 {
 	double x, y;       // positions
@@ -27,71 +32,66 @@ struct Particle
 	ALLEGRO_COLOR colour;
 
 };
-
+//creates array of particles 
 Particle p[nParticles];
+//creates an instance of a particle for cuda to use
 Particle *singlep;
 const int nIters = 10;  // simulation iterations
+//defines the block for CUDA
 int Block = 16;
-long bytes;
-float *buf = (float*)malloc(bytes);
-
+//created a long to allocate memory size for cuda
+long massive;
+//function to create the particles
 void CreateParticles()
 {
+	//for loop that iterates through all the particles
 	for (int i = 0; i < nParticles; i++)
 	{
-		float x = rand() % 5000 - 2500;
-		float y = rand() % 5000 - 2500;
-		float vx = 0.0f, vy = 0.0f;
-		if (rand() <= .5)
-		{
-			vx = -vx;
-			vy = -vy;
-		}
-		//double mass = rand() / SOFTENING * 10 + 1e20;
-		double mass = rand() % 1000 + 1;
+		// assigns a random location for each particle 
+		p[i].x = rand() % 5000 - 2500;
+		p[i].y = rand() % 5000 - 2500; 
+		//sets the speed of the particle to 0
+		p[i].vx = 0.0f;
+		p[i].vy = 0.0f;
+		//sets the mass to a random size
+		p[i].mass = rand() % 1000 + 1;
+		//randomizes the colour of the particle
 		int red = rand() % 255;
 		int blue = rand() % 255;
 		int green = rand() % 255;
-		ALLEGRO_COLOR colour = al_map_rgb(red, blue, green);
-		if (i == 0)
-		{
-			p[i].x = 0.1;
-			p[i].y = 0.5; 
-			p[i].vx = 0.0f;
-			p[i].vy = 0.0f;
-			p[i].mass = mass; 
-			p[i].colour = colour;
-		}
-		p[i].x = x;
-		p[i].y = y;
-		p[i].vx = vx;
-		p[i].vy = vy;
-		p[i].mass = mass;
-		p[i].colour = colour;
+		p[i].colour = al_map_rgb(red, blue, green);	
 	}
-	cudaMemcpy(singlep, &p, nParticles, cudaMemcpyHostToDevice);
+	//Copies count massive from the memory area pointed to by p to the memory area pointed to by singlep
+	cudaMemcpy(singlep, &p, massive, cudaMemcpyHostToDevice);
 }
-
+//funtion that draws the particles to the screen
 void DrawParticles()
 {
 	for (int i = 0; i < nParticles; i++)
 	{
 		p[i].x += p[i].vx*dt;
 		p[i].y += p[i].vy*dt;
-		al_draw_filled_circle((800 / 2) + ((int)p[i].x) / 10, (600 / 2) + ((int)p[i].y) / 10, 1.75f, p[i].colour);
+		//uses allegro fuction to draw the particles to the middle of the screen
+		al_draw_filled_circle((800 / 2) + ((int)p[i].x) / 10, (600 / 2) + ((int)p[i].y) / 10, p[i].mass/500, p[i].colour);
 	}
 }
+//initialize funtion
 void Init()
 {
+	//makes sure random is not the same every time the programme is run
 	srand(time(NULL));
+	//initializes allegro 
 	al_init();
+	//this function allows 
 	al_init_primitives_addon();
+	//creates 
 	ALLEGRO_DISPLAY* display = al_create_display(800, 600);
-
 	cudaSetDevice(0);
-	bytes = sizeof(p) * nParticles;
-	cudaMalloc((void**)&singlep, bytes);
+	massive = sizeof(Particle) * nParticles;
+	//allocates the memory needed for cuda 
+	cudaMalloc((void**)&singlep, massive);
 }
+//function that is to be parralezied
 __global__
 void ParticleForce(Particle* singlep)
 {
@@ -108,16 +108,16 @@ void ParticleForce(Particle* singlep)
 		Fy += /*(p[i]->mass )*/  dy * invDist3;
 	}
 	singlep[i].vx += Fx * dt;
-	singlep[i].vy += Fy * dt ;
+	singlep[i].vy += Fy * dt =;
 	__syncthreads();
 }
 void runSim(int b)
 {
 	int number_of_blocks = (nParticles + Block - 1) / Block;
-	cudaMemcpy(singlep, &p, nParticles , cudaMemcpyHostToDevice);
+	cudaMemcpy(singlep, &p, massive, cudaMemcpyHostToDevice);
 	ParticleForce << < number_of_blocks, Block >> > (singlep);
 	cudaDeviceSynchronize();
-	cudaMemcpy(&p, &singlep[0], nParticles, cudaMemcpyDeviceToHost);
+	cudaMemcpy(&p, &singlep[0], massive, cudaMemcpyDeviceToHost);
 	DrawParticles();
 	al_flip_display();
 	al_clear_to_color(al_map_rgb(0, 0, 0));
@@ -126,13 +126,16 @@ void runSim(int b)
 int main(const int argc, const char** argv)
 {
 	Init();
+	//starts the timing device
 	auto start = std::chrono::system_clock::now();
 	int b = 16;
+	//runs through the programm 10 times to calculate the average
 	for (int iter = 0; iter <= nIters; iter++)
 	{
 		CreateParticles();
 		auto current_start = std::chrono::system_clock::now();
-		for (int i = 0; i < 1000; i++)
+		//runs through the simulation many times
+		for (int i = 0; i < 10000; i++)
 		{
 			runSim(b);
 		}
@@ -146,6 +149,7 @@ int main(const int argc, const char** argv)
 	auto end = std::chrono::system_clock::now();
 	// Get the total time
 	auto total = end - start;
+	//allows the programme to 
 	int a;
 	std::cin >> a;
 	al_clear_to_color(al_map_rgb(0, 0, 0));

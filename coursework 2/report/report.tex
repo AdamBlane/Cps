@@ -3,9 +3,13 @@
 %	options include 12pt or 11pt or 10pt
 %	classes include article, report, book, letter, thesis
 \usepackage{graphicx}
-\usepackage[useregional]{datetime2}
 \usepackage{caption}
-
+\usepackage{dblfloatfix}
+\usepackage{url}
+\usepackage{lipsum}
+\usepackage{xcolor}
+\usepackage{listings}
+\g@addto@macro\@floatboxreset{\centering}
 \author{Adam Blance 40161070}
 \begin{document}
 
@@ -17,7 +21,6 @@ In this paper the task was to solve the N-Body problem using several paralleizia
 		
 \end{abstract}
 \begin{figure}
-	\centering
 	\includegraphics[scale=0.5]{pics/intro.png}
 	\caption{An N-Body simulation.}
 \end{figure}
@@ -43,7 +46,7 @@ These three factors were measured by the execution time, this was calculated by 
 \subsubsection{Length of Simulation}
 \includegraphics[scale=0.5]{pics/ialength.png}
 \newline
-The reason for measuring the length of the simulation was to see if a drop off occurred at any point and performance suffered because of this. This was measured in number of iterations. As shown in the results no bottleneck occurred at any point as the time taken increased at steady amount as was expected and the framerate did not suffer at all. An anomaly occurred during this test. This being the framerate dropping to 42 fps rather the holding at 45 fps like the other tests this probably had nothing to do with code and with assumed to be an anomaly. The other strange occurrence in this test was that ///comeback to this /////
+The reason for measuring the length of the simulation was to see if a drop off occurred at any point and performance suffered because of this. This was measured in number of iterations. As shown in the results no bottleneck occurred at any point as the time taken increased at steady amount as was expected and the framerate did not suffer at all. An anomaly occurred during this test. This being the framerate dropping to 42 fps rather the holding at 45 fps like the other tests this probably had nothing to do with code and with assumed to be an anomaly.
 \subsubsection{Size of Times Step}
 \includegraphics[scale=0.5]{pics/iatime.png}
 \newline
@@ -52,17 +55,17 @@ The second measurement that was taken to check if changing the time step effecte
 \includegraphics[scale=0.5]{pics/ianumber.png}
 \newline
 The final measurement that was taken was Number of Particles the graph show clearly that a bottleneck occurs as the number of particles increases, this is because increasing the number of particles increases the number of calculations the PC must perform exponentially. The aforementioned test clearly states the place that must be parallelized. The code that will be parallelized is shown below.
-////////put in code/////// 
-\newline
+\lstinputlisting[]{./sourceCode/par.cpp}
 	
 \section{Methodology}
 To solve the bottle-neck that was defined in the initial analysis several parallelization techniques were used. These were OpenMP and CUDA. The idea behind using these approaches was to be able to compare parralelization on the GPU against  parralelization on the CPU.They would be measured by increasing the number of particles on screen and their results would be presented below.
 \newline
 To keep the values constant each test was run 11 times and an average value was calculated with the first value being ignored to allow the program to warm up. Another step that was taken to keep consistency between results was to keep the hardware constant on all tests. The hardware was:
 \begin{itemize}
-	\item soomeibnga
-	\item S
-	\item te
+	\item CPU- i7-4790k @ 4.00 GHz 4 hardware cores.
+	\item RAM- 16.0 GB
+	\item GPU- NVIDA GeForce GTX 980
+	\item OS- Windows 10 64-bit
 \end{itemize}
  To evaluate these techniques two values were quantified, these being the time taken to complete the simulation and the average frame-rate. To calculate the time taken this system clock within Visual Studio was used. This was important to present in the results as it is the most common and easiest way to compare with a sequential program. To measure the Frame-rate Fraps was used. The reason for this is because in most simulations the frame-rate is more important then the time taken. 
 
@@ -85,8 +88,16 @@ The first results that are shown are the OpenMP results.
 \newline
 \includegraphics[scale=0.7]{pics/opspeedup.png}
 \newline
-If we compare this with the sequential results, The difference very large although this is to be expected.  
+If we compare this with the sequential results, The difference very large although this is to be expected. 
 \subsection{CUDA}
+\newline
+\includegraphics[scale=0.5]{pics/cudatest.png}
+\newline
+\includegraphics[scale=0.7]{pics/cudaspeedup.png}
+\newline
+\subsection{Comparison}
+\includegraphics[scale=0.75]{pics/finalspeedup.png}
+\newline
 \section{Conclusion}
 In this project two of the most well-known parralelization techniques were correlated
 against each other and while CUDA had the highest speed up of the two. It is important to note that OpenMP is more useful to a weak programmer because of its  easiness to set up. Working with an N-Body simulation allowed for a swift discovery of the bottleneck and allowed more focus to be placed parralelizing the algorithm rather then the initial analysis. 
