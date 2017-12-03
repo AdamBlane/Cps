@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.18 (TeX Live 2017/W32TeX) (preloaded format=pdflatex 2017.11.4)  1 DEC 2017 23:57
+This is pdfTeX, Version 3.14159265-2.6-1.40.18 (TeX Live 2017/W32TeX) (preloaded format=pdflatex 2017.11.4)  2 DEC 2017 23:26
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -46,6 +46,44 @@ File: pdftex.def 2017/06/24 v1.0g Graphics/color driver for pdftex
 ))
 \Gin@req@height=\dimen103
 \Gin@req@width=\dimen104
+)
+(d:/texlive/2017/texmf-dist/tex/latex/datetime2/datetime2.sty
+Package: datetime2 2016/07/12 v1.5.2 (NLCT) date and time formats
+
+(d:/texlive/2017/texmf-dist/tex/latex/tracklang/tracklang.sty
+Package: tracklang 2017/03/25 v1.3.4 (NLCT) Track Languages
+
+(d:/texlive/2017/texmf-dist/tex/generic/tracklang/tracklang.tex))
+(d:/texlive/2017/texmf-dist/tex/latex/etoolbox/etoolbox.sty
+Package: etoolbox 2017/01/02 v2.4 e-TeX tools for LaTeX (JAW)
+\etb@tempcnta=\count87
+)
+(d:/texlive/2017/texmf-dist/tex/latex/xkeyval/xkeyval.sty
+Package: xkeyval 2014/12/03 v2.7a package option processing (HA)
+
+(d:/texlive/2017/texmf-dist/tex/generic/xkeyval/xkeyval.tex
+(d:/texlive/2017/texmf-dist/tex/generic/xkeyval/xkvutils.tex
+\XKV@toks=\toks15
+\XKV@tempa@toks=\toks16
+)
+\XKV@depth=\count88
+File: xkeyval.tex 2014/12/03 v2.7a key=value parser (HA)
+)))
+(d:/texlive/2017/texmf-dist/tex/latex/caption/caption.sty
+Package: caption 2016/02/21 v3.3-144 Customizing captions (AR)
+
+(d:/texlive/2017/texmf-dist/tex/latex/caption/caption3.sty
+Package: caption3 2016/05/22 v1.7-166 caption3 kernel (AR)
+Package caption3 Info: TeX engine: e-TeX on input line 67.
+\captionmargin=\dimen105
+\captionmargin@=\dimen106
+\captionwidth=\dimen107
+\caption@tempdima=\dimen108
+\caption@indent=\dimen109
+\caption@parindent=\dimen110
+\caption@hangindent=\dimen111
+)
+\c@ContinuedFloat=\count89
 ) (./report.aux)
 \openout1 = `report.aux'.
 
@@ -61,19 +99,20 @@ LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 10.
 LaTeX Font Info:    ... okay on input line 10.
 LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 10.
 LaTeX Font Info:    ... okay on input line 10.
+
 (d:/texlive/2017/texmf-dist/tex/context/base/mkii/supp-pdf.mkii
 [Loading MPS to PDF converter (version 2006.09.02).]
-\scratchcounter=\count87
-\scratchdimen=\dimen105
+\scratchcounter=\count90
+\scratchdimen=\dimen112
 \scratchbox=\box26
-\nofMPsegments=\count88
-\nofMParguments=\count89
-\everyMPshowfont=\toks15
-\MPscratchCnt=\count90
-\MPscratchDim=\dimen106
-\MPnumerator=\count91
-\makeMPintoPDFobject=\count92
-\everyMPtoPDFconversion=\toks16
+\nofMPsegments=\count91
+\nofMParguments=\count92
+\everyMPshowfont=\toks17
+\MPscratchCnt=\count93
+\MPscratchDim=\dimen113
+\MPnumerator=\count94
+\makeMPintoPDFobject=\count95
+\everyMPtoPDFconversion=\toks18
 ) (d:/texlive/2017/texmf-dist/tex/latex/oberdiek/epstopdf-base.sty
 Package: epstopdf-base 2016/05/15 v2.6 Base part for package epstopdf
 
@@ -130,78 +169,82 @@ G,.JBIG2,.JB2,.eps]
 File: epstopdf-sys.cfg 2010/07/13 v1.3 Configuration of (r)epstopdf for TeX Liv
 e
 ))
+Package caption Info: Begin \AtBeginDocument code.
+Package caption Info: End \AtBeginDocument code.
 LaTeX Font Info:    External font `cmex10' loaded for size
-(Font)              <14.4> on input line 15.
+(Font)              <14.4> on input line 14.
 LaTeX Font Info:    External font `cmex10' loaded for size
-(Font)              <7> on input line 15.
+(Font)              <7> on input line 14.
 <pics/intro.png, id=1, 600.74437pt x 445.665pt>
 File: pics/intro.png Graphic file (type png)
 <use pics/intro.png>
-Package pdftex.def Info: pics/intro.png  used on input line 26. on input line 2
-6.
+Package pdftex.def Info: pics/intro.png  used on input line 21. on input line 2
+1.
 Package pdftex.def Info: Requested size: 300.37144pt x 222.83195pt on input lin
-e 26.
+e 21.
  [1
 
-{d:/texlive/2017/texmf-var/fonts/map/pdftex/updmap/pdftex.map}]
-LaTeX Font Info:    Try loading font information for OMS+cmr on input line 35.
+{d:/texlive/2017/texmf-var/fonts/map/pdftex/updmap/pdftex.map}] [2 <./pics/intr
+o.png>]
+LaTeX Font Info:    Try loading font information for OMS+cmr on input line 38.
 
 (d:/texlive/2017/texmf-dist/tex/latex/base/omscmr.fd
 File: omscmr.fd 2014/09/29 v2.5h Standard LaTeX font definitions
 )
 LaTeX Font Info:    Font shape `OMS/cmr/m/n' in size <12> not available
-(Font)              Font shape `OMS/cmsy/m/n' tried instead on input line 35.
- [2 <./pics/intro.png>]
+(Font)              Font shape `OMS/cmsy/m/n' tried instead on input line 38.
 <pics/ialength.png, id=15, 724.20563pt x 216.81pt>
 File: pics/ialength.png Graphic file (type png)
 <use pics/ialength.png>
-Package pdftex.def Info: pics/ialength.png  used on input line 42. on input lin
-e 42.
+Package pdftex.def Info: pics/ialength.png  used on input line 44. on input lin
+e 44.
 Package pdftex.def Info: Requested size: 362.10193pt x 108.40472pt on input lin
-e 42.
-<pics/iatime.png, id=16, 724.20563pt x 216.81pt>
+e 44.
+ [3 <./pics/ialength.png>]
+<pics/iatime.png, id=20, 724.20563pt x 216.81pt>
 File: pics/iatime.png Graphic file (type png)
 <use pics/iatime.png>
-Package pdftex.def Info: pics/iatime.png  used on input line 46. on input line 
-46.
+Package pdftex.def Info: pics/iatime.png  used on input line 48. on input line 
+48.
 Package pdftex.def Info: Requested size: 362.10193pt x 108.40472pt on input lin
-e 46.
+e 48.
 
-Underfull \hbox (badness 10000) in paragraph at lines 46--48
+Underfull \hbox (badness 10000) in paragraph at lines 48--50
 
  []
 
-<pics/ianumber.png, id=17, 724.20563pt x 216.81pt>
+<pics/ianumber.png, id=21, 724.20563pt x 216.81pt>
 File: pics/ianumber.png Graphic file (type png)
 <use pics/ianumber.png>
-Package pdftex.def Info: pics/ianumber.png  used on input line 50. on input lin
-e 50.
+Package pdftex.def Info: pics/ianumber.png  used on input line 52. on input lin
+e 52.
 Package pdftex.def Info: Requested size: 362.10193pt x 108.40472pt on input lin
-e 50.
-[3 <./pics/ialength.png> <./pics/iatime.png>]
-Overfull \hbox (5.2746pt too wide) in paragraph at lines 55--61
-\OT1/cmr/m/n/12 The code that will be par-al-lelized is shown be-low. ////////p
-ut in code/////// 
+e 52.
+
+Underfull \hbox (badness 10000) in paragraph at lines 52--57
+
  []
 
-[4 <./pics/ianumber.png>] [5] (./report.aux) ) 
+[4 <./pics/iatime.png> <./pics/ianumber.png>] [5] [6] (./report.aux) ) 
 Here is how much of TeX's memory you used:
- 1465 strings out of 492985
- 20990 string characters out of 6136284
- 76978 words of memory out of 5000000
- 5035 multiletter control sequences out of 15000+600000
+ 5389 strings out of 492985
+ 102250 string characters out of 6136284
+ 160171 words of memory out of 5000000
+ 8928 multiletter control sequences out of 15000+600000
  7235 words of font info for 26 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
- 41i,6n,25p,661b,189s stack positions out of 5000i,500n,10000p,200000b,80000s
-<d:/texlive/2017/texmf-dist/fonts
-/type1/public/amsfonts/cm/cmbx10.pfb><d:/texlive/2017/texmf-dist/fonts/type1/pu
-blic/amsfonts/cm/cmbx12.pfb><d:/texlive/2017/texmf-dist/fonts/type1/public/amsf
-onts/cm/cmr12.pfb><d:/texlive/2017/texmf-dist/fonts/type1/public/amsfonts/cm/cm
-r17.pfb><d:/texlive/2017/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy10.pfb>
-Output written on report.pdf (5 pages, 114216 bytes).
+ 53i,6n,92p,830b,339s stack positions out of 5000i,500n,10000p,200000b,80000s
+<d:/texli
+ve/2017/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx10.pfb><d:/texlive/2017/t
+exmf-dist/fonts/type1/public/amsfonts/cm/cmbx12.pfb><d:/texlive/2017/texmf-dist
+/fonts/type1/public/amsfonts/cm/cmr10.pfb><d:/texlive/2017/texmf-dist/fonts/typ
+e1/public/amsfonts/cm/cmr12.pfb><d:/texlive/2017/texmf-dist/fonts/type1/public/
+amsfonts/cm/cmr17.pfb><d:/texlive/2017/texmf-dist/fonts/type1/public/amsfonts/c
+m/cmsy10.pfb>
+Output written on report.pdf (6 pages, 133344 bytes).
 PDF statistics:
- 44 PDF objects out of 1000 (max. 8388607)
- 27 compressed objects within 1 object stream
+ 51 PDF objects out of 1000 (max. 8388607)
+ 32 compressed objects within 1 object stream
  0 named destinations out of 1000 (max. 500000)
  21 words of extra memory for PDF output out of 10000 (max. 10000000)
 
