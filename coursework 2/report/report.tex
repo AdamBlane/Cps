@@ -1,7 +1,6 @@
 
 \documentclass[12pt]{article}
-%	options include 12pt or 11pt or 10pt
-%	classes include article, report, book, letter, thesis
+\usepackage[margin=1.1in]{geometry}
 \usepackage{graphicx}
 \usepackage{caption}
 \usepackage{dblfloatfix}
@@ -9,52 +8,54 @@
 \usepackage{lipsum}
 \usepackage{xcolor}
 \usepackage{listings}
-\g@addto@macro\@floatboxreset{\centering}
+
 \author{Adam Blance 40161070}
 \begin{document}
 
 	\title{SET10108 Concurrent and Parallel Systems \linebreak Coursework 2 \linebreak N-Body Simulation}
 	\markboth{40161070}{}
 	\maketitle
+	\newpage
 \begin{abstract}
-In this paper the task was to solve the N-Body problem using several paralleiziation techniques. To complete this task the two approaches used were OpenMP and CUDA this allowed for a direct comparison of the GPU and CPU. These were measured in two different ways, these being time taken to complete the simulation and the frame rate the application achieved during the run time. These results were the displayed in tables and discussed. Proving that paralleiziation is faster on the GPU, although paralleiziation on the CPU is simpler.
-		
+In this course-work the task was to create an N-Body simulation, then solve the N-Body problem using several paralleiziation techniques. To complete this task the two approaches used, these were OpenMP and CUDA. This allowed for a direct comparison between the GPU and CPU. These were measured in two different ways, the first being time taken to complete the simulation and the second being the frame rate the application achieved during its run time. These results were then displayed in tables and discussed. Proving that paralleiziation is overall faster on the GPU, although paralleiziation on the CPU is simpler and quicker with smaller data sets.
+\newline
 \end{abstract}
-\begin{figure}
+\begin{figure}[h]
+	\centering
 	\includegraphics[scale=0.5]{pics/intro.png}
 	\caption{An N-Body simulation.}
 \end{figure}
-\newpage 		
+\newpage	
+	
 \section{Introduction}
-As more and more of our world becomes heavily reliant on data found online, it is  becoming more necessary to learn how to parallelize this data, allowing data to be processed as quickly as possible.  Learning how to parallelize sequential systems has become a very important skill to possess in your repertoire. 
+As more and more of our world becomes heavily reliant on data found online, it is  becoming of higher importance to learn how to parallelize this data, allowing data to be processed as quickly as possible.  Learning how to parallelize sequential systems has become a very necessary skill to possess in your repertoire. 
 \newline 
-In this course-work the task was to parallelize an N-body algorithm. An N-Body algorithm is a simulation where a particle is affected by the all other particles according to the laws of physics. Issues occur when large amounts of particles are rendered on the screen. This causes any program running an N-Body simulation sequentially to struggle. This is known as the N-Body problem. In this report several
-parallelization techniques were used to solve the N-Body problem and compared.
+In this course-work the task was to parallelize an N-body algorithm. An N-Body algorithm is a simulation where a particle is affected by the all other particles according to the laws of physics. Issues occur when large amounts of particles are rendered on the screen, as all particles must be effected by all other particles causing the number calculations to increase exponentially. This causes any program running an N-Body simulation sequentially to struggle. This is known as the N-Body problem. In this report several parallelization techniques were used to solve the N-Body problem and then compared.
 
 \section{Inital Analysis}
-The first task in the course work was choosing which of the three tasks posed to us. It was decided that N-Body simulation would be the task that would be selected. The reason for deciding on N-Body simulation was because research into JPEG compression found little results and while prime numbers search was possible, N-body was chosen down to personal preference.
+The first task in the course work was choosing which of the three tasks posed to us would be undertaken. It was decided that N-Body simulation would be the task that would be selected. The reason for deciding on N-Body simulation was because research into JPEG compression found little results and while prime numbers search was a possibility, N-body was chosen down to personal preference.
 \newline 
-Once this was decided on research was conducted into N-Body simulation and which algorithm online would be used to parallelise. During the search many possible candidates were found but the best one was harrism/mini-nbody . The reason for this was it because of its relative simplicity allowing for graphical output to be easily added into the code. After that small tweaks were made to the N-Body simulation and using Allegro 5, a graphical interface was created. From this point the initial analysis was conducted.
+Once this was decided on research was conducted into N-Body simulation and which algorithm found online would be used to parallelise. During the search many possible candidates were found but the best one was harrism/mini-nbody . The reason for this was it because of its relative simplicity allowing for graphical output to be easily added into the code. After that small tweaks were made to the N-Body simulation and using Allegro 5, a graphical interface was created. From this point the initial analysis was conducted.
 \subsection{First Results}
-It was decided that 3 things would be tested to gather the baseline data of the application to discover any bottlenecks. These were:
+It was decided that three things would be tested to gather the baseline data of the application, to look for any bottlenecks. These were:
 \begin{itemize}
  \item Length of Simulation.
  \item Size of Times Step.
   \item Number of Particles. 
 \end{itemize}
-These three factors were measured by the execution time, this was calculated by taking using the system clock and printed to a console, also taken was the average framerate this was measured using Fraps. The tables for the measurements are shown below.
+These three factors were measured by the execution time, this was calculated by  using the system clock that came in the chrono standard library. Then printing to the console, also taken was the average frame-rate, this was measured using Fraps. The tables for the measurements are shown below.
 \subsubsection{Length of Simulation}
 \includegraphics[scale=0.5]{pics/ialength.png}
 \newline
-The reason for measuring the length of the simulation was to see if a drop off occurred at any point and performance suffered because of this. This was measured in number of iterations. As shown in the results no bottleneck occurred at any point as the time taken increased at steady amount as was expected and the framerate did not suffer at all. An anomaly occurred during this test. This being the framerate dropping to 42 fps rather the holding at 45 fps like the other tests this probably had nothing to do with code and with assumed to be an anomaly.
+The reason for measuring the length of the simulation was to see if a drop off occurred at any point and performance suffered because of this. This was measured in number of iterations of the simulation. As shown in the results no bottleneck occurred at any point as the time taken increased at steady amount as was expected.  the frame-rate also did not suffer and stayed steady. An anomaly that occurred during this test was that the frame-rate dropped to 42 fps at 6000 iterations rather the holding at 45 fps like the other tests this probably had nothing to do with code and with assumed to be an anomaly.
 \subsubsection{Size of Times Step}
 \includegraphics[scale=0.5]{pics/iatime.png}
 \newline
-The second measurement that was taken to check if changing the time step effected the results. This could occur if drawing objects on screen caused a bottleneck and the speed of moving the on screen caused a frame-rate drop. As shown in the results, this is not the case. The frame rate and speed both stayed the same the entire time the programme was run.
+The second test that was taken was to check if changing the time step effected the results. This could occur if drawing objects on screen caused a bottleneck and the speed of moving the on screen could cause the frame-rate to drop. As shown in the results, this is not the case. The frame rate and speed both stayed the same the entire time the programme was run.
 \subsubsection{ Number of Particles}
 \includegraphics[scale=0.5]{pics/ianumber.png}
 \newline
-The final measurement that was taken was Number of Particles the graph show clearly that a bottleneck occurs as the number of particles increases, this is because increasing the number of particles increases the number of calculations the PC must perform exponentially. The aforementioned test clearly states the place that must be parallelized. The code that will be parallelized is shown below.
+The final measurement that was taken was Number of Particles the graph show clearly that a bottleneck occurs as the number of particles increases, this is because increasing as the number of particles increases, the number of calculations the PC must perform  increases exponentially. The aforementioned test clearly shows the place that must be parallelized. The code that will be parallelized is shown below.
 \lstinputlisting[]{./sourceCode/par.cpp}
 	
 \section{Methodology}
@@ -67,7 +68,7 @@ To keep the values constant each test was run 11 times and an average value was 
 	\item GPU- NVIDA GeForce GTX 980
 	\item OS- Windows 10 64-bit
 \end{itemize}
- To evaluate these techniques two values were quantified, these being the time taken to complete the simulation and the average frame-rate. To calculate the time taken this system clock within Visual Studio was used. This was important to present in the results as it is the most common and easiest way to compare with a sequential program. To measure the Frame-rate Fraps was used. The reason for this is because in most simulations the frame-rate is more important then the time taken. 
+ To evaluate these techniques two values were quantified, these being the time taken to complete the simulation and the average frame-rate. To calculate the time taken this system clock within Visual Studio was used. This was important to present in the results as it is the most common and easiest way to compare with a sequential program. To measure the Frame-rate Fraps was used. The reason for this is because in most simulations the frame-rate is more important then the time taken. The frame-rate was capped at 136 frames per second, this was because anything above 90 fps becomes unnoticeable.   Finally speed-up would be calculated as this was deemed to be the best way to compare the two approaches.
 
 \subsubsection{OpenMP}
 The first approach was to use OpenMP, OpenMP is a library to support shared memory concurrency that works in the CPU, allowing it to be portable and added easily to the program. It can  be easily used in conjunction with other approaches allowing more threading to be added at a later stage.
@@ -78,7 +79,7 @@ CUDA is a  parallel computing platform and application programming interface mod
 \newline
  To carry out the task of adding CUDA to the application, a different approach was taken as CUDA is more complicated to add then OpenMP. Once CUDA was installed in Visual Studio it was discovered that the code would have to be completely reworked to add CUDA into the programme. This may not have been the case but a lack of overall knowledge in the background of CUDA restricted the outcome of the project.
  \newline 
- The place that the parrelization was to be added would be the same place as OpenMP however before this could be implemented the code needed to be converted to a kernal.///needmore///
+ The place that the parrelization was to be added would be the same place as OpenMP however before this could be implemented the code needed to be converted into a kernal. After this memory was allocated for CUDA this involved calculating how much data would be needed to be used. This was done by multiplying the size of the particle struct by the number of particles.
 
 \section{Results}
 \subsection{OpenMP}
@@ -88,25 +89,36 @@ The first results that are shown are the OpenMP results.
 \newline
 \includegraphics[scale=0.7]{pics/opspeedup.png}
 \newline
-If we compare this with the sequential results, The difference very large although this is to be expected. 
+ In the average speed the results show a smooth curve in the upward direction, this is probably not a good thing and shows at large values, bottlenecking would still occur.
+ \newline
+ The frame-rate has a sharp decline starting at 1250 particles, this was in keeping with the idea that a bottleneck was still occurring albeit at a smaller rate.
 \subsection{CUDA}
+The next set of results shows the output from the CUDA tests.
 \newline
 \includegraphics[scale=0.5]{pics/cudatest.png}
 \newline
 \includegraphics[scale=0.7]{pics/cudaspeedup.png}
 \newline
+From this no obvious bottleneck occurs with the line being nearly straight, and gradient of the line is very gradual with the simulation remaining under 100,000 seconds up until around 3000 particles.
+\newline
+The frame rate of CUDA tests stays constant up until 2250 particles,after this the drop off is rather small with 4250 particles still being above 60 frames per second. 
 \subsection{Comparison}
 \includegraphics[scale=0.75]{pics/finalspeedup.png}
 \newline
+The speed-up calculation shows that at small amounts of particles, OpenMP is the better parralelization technique however above 1000 particles CUDA is the more superior of the two with the gap only growing between the two at extreme sizes of data.
+\newline
+The frame-rate of CUDA also stays stable to a larger amount of particles then the OpenMP this keeps the idea that CUDA is better at large amounts of data constant.
+\newline
+
 \section{Conclusion}
 In this project two of the most well-known parralelization techniques were correlated
-against each other and while CUDA had the highest speed up of the two. It is important to note that OpenMP is more useful to a weak programmer because of its  easiness to set up. Working with an N-Body simulation allowed for a swift discovery of the bottleneck and allowed more focus to be placed parralelizing the algorithm rather then the initial analysis. 
+against each other and while CUDA had the highest speed up of the two for large amounts of data. OpenMP on the other had is marginally better at smaller data sets. It is also important to note that OpenMP is more useful to a weak programmer because of its  easiness to set up and simplicity to use well. 
 \subsection{Limitations}
 The main limitation of this project was the hardware. While the computers that these tests were performed was very powerful. It still became a limiting factor when running large amounts of particles.
 \subsection{Future Work}
 Several optimizations could be made to CUDA system including using parallel compilers which come include in the CUDA library. BEcause of OpenMPs simplicity it is harder to optimize later on however combining it with CUDA could be investigated to see if it increased speed up even more. Another idea to improve the overall performance of the program could be to make some assumptions about N-Body simulation, ie group particles mass together if their in a certain direction. 
 \subsection{Final Thoughts}
-During this project I enjoyed creating and implementing an N-Body simulation. While the biggest challenge in this project was implementing CUDA it was still very interesting to properly implement it into my own programme.
+During this project I enjoyed creating and implementing an N-Body simulation. While the biggest challenge in this project was implementing CUDA it was still very interesting to properly implement it into my own programme. Working with an N-Body simulation allowed for a swift discovery of the bottleneck and allowed more focus to be placed parralelizing the algorithm rather then the initial analysis. 
 
 	
 \end{document}
